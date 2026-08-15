@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: planta-sanit-us
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    buildCommand: null
+    startCommand: null
+    envVars:
+      - key: FLASK_SECRET
+        value: ""
+      - key: PLANTA_DB
+        value: "planta_sanitus.db"

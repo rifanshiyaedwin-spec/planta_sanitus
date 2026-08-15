@@ -23,7 +23,8 @@ from security_service import sanitize_user_input, check_cia_security_status
 from disease_info import DISEASE_KNOWLEDGE_BASE, get_disease_info
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'plantasanitus_enterprise_key_2026_secured'
+# Load secret from environment for production; fallback kept for local/dev convenience
+app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET', 'plantasanitus_enterprise_key_2026_secured')
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024  # CIA Availability: 10MB upload limit
 
 UPLOAD_FOLDER = os.path.join(app.root_path, 'static', 'uploads')
@@ -399,4 +400,6 @@ if __name__ == '__main__':
     print("Official Domain: https://plantasanitus.com")
     print("Local Dev Server: http://127.0.0.1:5000")
     print("============================================================")
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_DEBUG', 'True').lower() in ('1', 'true', 'yes')
+    app.run(debug=debug, host='0.0.0.0', port=port)

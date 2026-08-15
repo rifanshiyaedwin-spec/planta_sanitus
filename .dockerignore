@@ -1,0 +1,11 @@
+# Ignore Python build artifacts
+__pycache__/
+*.pyc
+venv/
+.env
+.plantasanitus_db
+planta_sanitus.db
+
+# Docker files
+Dockerfile
+.dockerignore
