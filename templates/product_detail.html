@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ product.name }}</h2>
+<p>{{ product.description }}</p>
+<img src="{{ qr }}" alt="QR">
+<form action="/cart" method="get"><button>Add to cart</button></form>
+{% endblock %}

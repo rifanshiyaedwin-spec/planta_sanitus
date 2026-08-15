@@ -1,0 +1,17 @@
+# Ignore Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+.plantasanitus_db
+planta_sanitus.db
+instance/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/

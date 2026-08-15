@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>AgriBot Chat</h2>
+<form id="chat" method="post" action="/api/chatbot">
+  <input name="query" placeholder="Ask a question">
+  <button type="submit">Ask</button>
+</form>
+{% endblock %}

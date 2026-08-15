@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Soil Health Analyzer</h2>
+<form method="post">
+  <label>pH: <input name="ph" value="6.5"></label><br>
+  <label>Nitrogen: <input name="nitrogen" value="150"></label><br>
+  <label>Phosphorus: <input name="phosphorus" value="30"></label><br>
+  <label>Potassium: <input name="potassium" value="140"></label><br>
+  <button type="submit">Analyze</button>
+</form>
+{% if result %}
+<h3>Result</h3>
+<pre>{{ result }}</pre>
+{% endif %}
+{% endblock %}

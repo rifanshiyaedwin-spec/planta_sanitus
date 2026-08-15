@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome to PlantaSanitus</h2>
+<p>Weather: {{ weather.source }} - {{ weather.forecast }}</p>
+<h3>Featured Products</h3>
+<ul>
+  {% for p in products %}
+    <li><a href="/product/{{ p.id }}">{{ p.name }}</a> - {{ p.price }}</li>
+  {% else %}
+    <li>No products yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

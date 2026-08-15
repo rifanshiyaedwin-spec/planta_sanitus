@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Seller Dashboard</h2>
+<ul>
+  {% for p in products %}
+    <li>{{ p.name }} - {{ p.price }}</li>
+  {% else %}
+    <li>No products listed.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

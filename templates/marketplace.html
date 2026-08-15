@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Marketplace</h2>
+<ul>
+  {% for p in products %}
+    <li><a href="/product/{{ p.id }}">{{ p.name }}</a> - {{ p.price }}</li>
+  {% else %}
+    <li>No products.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Scan Report #{{ scan.id }}</h2>
+<p>Disease: {{ scan.disease }} ({{ scan.confidence }})</p>
+<p>Info: {{ info }}</p>
+{% endblock %}

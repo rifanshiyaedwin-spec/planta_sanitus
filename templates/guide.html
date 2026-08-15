@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Guide</h2>
+<ul>
+  {% for k,v in kb.items() %}
+    <li><strong>{{ v.name }}</strong>: {{ v.symptoms }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
